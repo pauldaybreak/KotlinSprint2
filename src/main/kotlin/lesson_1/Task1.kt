@@ -5,4 +5,3 @@ fun main() {
     val textOfThnx: String = "Благодарим за покупку, если приведёте друга, дадим скидку 10%"
     println("Информация о заказах: $quantityOrders, текст для клиента: $textOfThnx")
 }
-
