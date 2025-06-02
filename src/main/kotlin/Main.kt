@@ -3,8 +3,8 @@ package org.example
 
 fun main(){
     val year: Int = 1961
-    var hour: String = "09"
-    var minute: String = "07"
+    var hour: String = "10"
+    var minute: String = "55"
     print("$year, $hour:$minute")
 
 
