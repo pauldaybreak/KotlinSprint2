@@ -1,13 +1,17 @@
 package lesson_2
 
-fun main() {
-    val hourTo = 9
-    val minutes = 40
-    val timeRoad = 457
+/*
+Расчёт времени прибытия поезда
+ */
 
-    val minutesOfDay = (60 * hourTo) + minutes
+fun main() {
+    val hourFrom: Int = 9 //время убытия поезда
+    val minutes: Int = 40
+    val timeRoad: Int = 457 // время в пути
+
+    val minutesOfDay = (60 * hourFrom) + minutes
     val timeMinutesFinish = (minutesOfDay + timeRoad) % 60
     val timeHourFinish = (minutesOfDay + timeRoad) / 60
 
-    println("%02d:%02d".format(timeHourFinish, timeMinutesFinish))
+    println("Поезд прибывает на станцию в - " + "%02d часов : %02d минут".format(timeHourFinish, timeMinutesFinish))
 }
