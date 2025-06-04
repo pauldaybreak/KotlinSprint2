@@ -1,5 +1,9 @@
 package lesson_2
 
+/* Подсчёт среднего балла студентов
+углублённо изучающих английский язык
+ */
+
 fun main(){
     val resultStudent1 = 3 // оценка студента
     val resultStudent2 = 4
