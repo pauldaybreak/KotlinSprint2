@@ -8,10 +8,10 @@ fun main() {
     val hourFrom: Int = 9 //время убытия поезда
     val minutes: Int = 40
     val timeRoad: Int = 457 // время в пути
-
-    val minutesOfDay = (60 * hourFrom) + minutes
-    val timeMinutesFinish = (minutesOfDay + timeRoad) % 60
-    val timeHourFinish = (minutesOfDay + timeRoad) / 60
+    val hourInMinutes = 60 // константа час в минутах
+    val minutesOfDay = (hourInMinutes * hourFrom) + minutes
+    val timeMinutesFinish = (minutesOfDay + timeRoad) % hourInMinutes
+    val timeHourFinish = (minutesOfDay + timeRoad) / hourInMinutes
 
     println("Поезд прибывает на станцию в - " + "%02d часов : %02d минут".format(timeHourFinish, timeMinutesFinish))
 }
