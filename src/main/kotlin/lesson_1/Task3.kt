@@ -9,6 +9,6 @@ fun main(){
     minute = "55"
     println(year)
     println(hour)
-    println(minute)
+    print(minute)
 
 }
