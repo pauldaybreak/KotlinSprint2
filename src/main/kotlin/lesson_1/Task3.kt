@@ -7,6 +7,8 @@ fun main(){
 
     hour = "10"
     minute = "55"
-    println("$hour:$minute")
+    println(year)
+    println(hour)
+    println(minute)
 
 }
