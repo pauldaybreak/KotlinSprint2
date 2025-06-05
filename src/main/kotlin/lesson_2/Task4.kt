@@ -4,7 +4,7 @@ package lesson_2
 Расчёт ресурсов данные баффом
  */
 
-fun main(){
+fun main() {
     var crystalWeight = 7
     var ferrumWeight = 11
     val buff = 20
