@@ -2,16 +2,13 @@ package lesson_8
 
 import kotlin.random.Random
 
-// Симуляция просмотров рекламы и вычисление суммы
-
-const val RANGE_OF_VIEWS = 9999 // Диапозон количества просмотров
-const val RANGE_OF_PERIOD = 7 // Диапозон временного периода (неделя)
+const val RANGE_OF_VIEWS = 9999
+const val RANGE_OF_PERIOD = 7
 
 fun main() {
     generationCountViews()
 }
 
-//  Генерация количества просмотров
 fun generationCountViews() {
     var countOfDays = 1
     var countViewAd = Array<Int>(RANGE_OF_PERIOD) { i -> Random.nextInt(RANGE_OF_VIEWS) }
@@ -22,7 +19,6 @@ fun generationCountViews() {
     sumViewsOfPeriod(countViewAd)
 }
 
-// Сумма просмотров за период
 fun sumViewsOfPeriod(mas: Array<Int>) {
     var sum = 0
     for (i in mas) {
