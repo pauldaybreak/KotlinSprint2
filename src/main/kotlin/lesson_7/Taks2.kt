@@ -1,13 +1,11 @@
 package lesson_7
 
-// Авторизация по 4х-значному коду
-
 fun main() {
     println("Для авторизации введите 4 значный код")
     do {
-        val pass = generationPassword().toString() // вызов ф-ции генерации 4-значного кода
+        val pass = generationPassword().toString()
         println("Ваш код авторизации: " + pass)
-        val inputUserPass = readln().toString()  // пользовательский ввод
+        val inputUserPass = readln().toString()
         if (inputUserPass != pass) {
             println("Введён неверный код!")
             continue
@@ -19,11 +17,8 @@ fun main() {
     } while (inputUserPass != pass)
 }
 
-fun generationPassword(): StringBuilder {
-    val numRange = 0..9
-    val pass = StringBuilder()
-    for (i in 1..4) {
-        pass.append(numRange.random())
-    }
+fun generationPassword(): Int {
+    val pass = (1000..9999).random()
     return pass
+
 }
