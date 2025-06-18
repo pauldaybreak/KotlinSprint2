@@ -7,7 +7,7 @@ fun main() {
         15 to "масло гр."
     )
     println("Введите количество порций: ")
-    val count = readln().toInt()
+    val count: Int = readln().toInt()
     val updateRecipe = mutableMapOf<Int, String>()
 
     for((key, value ) in ingredientsOnePart){
@@ -15,7 +15,6 @@ fun main() {
         updateRecipe.set(newKey, value)
     }
     println("На $count порции, нужно:")
-    for((key, value ) in ingredientsOnePart){
-        println("$value - $key")
-    }
+    print(ingredientsOnePart.map {(key, value) -> (key * count) to value})
+
 }
