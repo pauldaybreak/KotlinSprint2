@@ -1,48 +1,53 @@
 package lesson_10
 
-const val SIZE_ROW = 4
+const val MIN_LENGTH_DATA = 4
 
 fun main() {
     registrationInSystem()
 }
 
 fun registrationInSystem() {
-    var listLoginPass = mutableListOf<Pair<String, String>>()
+    var usrLogin: String
+    var usrPass: String
+
     do {
         println("Логин для регистрации")
-        val usrLogin = readln().toString().trim()
+        usrLogin = readln().trim()
         println("Пароль для регистрации")
-        val usrPass = readln().toString().trim()
-        listLoginPass.add(Pair(usrLogin, usrPass))
+        usrPass = readln().trim()
 
-    } while (!validationPassword(listLoginPass))
+    } while (!validationPassword(usrLogin, usrPass))
 
-    val resultEntry = inputToSystem(listLoginPass)
+    val resultEntry = inputToSystem(usrLogin, usrPass)
+
     when (resultEntry) {
         true -> println("Вход выполнен")
         false -> println("Вход не выполнен")
-
     }
 }
 
-fun validationPassword(listLogPass: MutableList<Pair<String, String>>): Boolean {
-    return listLogPass.map { (login, pass) ->
-        login.length >= SIZE_ROW && pass.length >= SIZE_ROW
-    }.also { results ->
-        if (!results.contains(true)) {
-            println("Логин или пароль недостаточно длинные")
-        }
-    }.contains(true)
-    println("Вы зарегистрировались")
+fun validationPassword(login: String, pass: String): Boolean {
+    val result: Boolean
+
+    if (login.length >= MIN_LENGTH_DATA && pass.length >= MIN_LENGTH_DATA) {
+        result = true
+        println("Вы зарегистрировались")
+    } else {
+        println("Длина логина или пароля недостаточна")
+        result = false
+    }
+    return result
 }
 
-fun inputToSystem(listLogPass: MutableList<Pair<String, String>>): Boolean {
+fun inputToSystem(login: String, pass: String): Boolean {
     println("Введите логин для входа")
-    val usrEntry = readln().toString()
+    val usrEntry = readln()
     println("Введите пароль для входа")
-    val passEntry = readln().toString()
-    val result = listLogPass.map { (login, pass) -> login == usrEntry && pass == passEntry }
-        .contains(true)
-    return result
+    val passEntry = readln()
+
+    return when {
+        login == usrEntry && pass == passEntry -> true
+        else -> false
+    }
 
 }
