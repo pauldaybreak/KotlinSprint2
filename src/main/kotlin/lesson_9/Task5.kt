@@ -2,39 +2,15 @@ package lesson_9
 
 fun main() {
     print("Введите 5 неповторяющихся продуктов:")
-    var listOfProducts = mutableListOf<String>()
-    var counter = 0
-    while (true) {
-        if (counter < 5) {
-            var usrInput = readln().toString().trim().lowercase()
-            if (usrInput in listOfProducts) {
-                println("такой продук уже есть в списке")
-                continue
-            }
-            listOfProducts.add(usrInput)
-            counter++
-        } else {
-            break
-        }
-    }
-    val sortedList = listOfProducts.sorted()
-    printInformation(sortedList as MutableList<String>)
+    val ingredients = MutableList(5) { readln().trim() }.toSet().sorted()
+    printInformation(ingredients as MutableList<String>)
 }
 
 fun printInformation(list: MutableList<String>) {
-    for ((i, word) in list.withIndex()) {
-        if (i == 0) {
-            print(word.replaceFirstChar { it.uppercase() })
-            print(", ")
-        } else if (i == list.size - 1) {
-            print(word)
-        } else {
-            print(word)
-            print(", ")
-        }
-
-    }
+    list[0] = list[0].replaceFirstChar { it.uppercase() }
+    print(list.joinToString())
 }
+
 
 
 
