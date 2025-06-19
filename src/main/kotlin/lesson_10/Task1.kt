@@ -5,11 +5,14 @@ const val DICE_SIDES = 6
 fun main() {
     var sumHuman = 0
     var sumTerminator = 0
+    println("Пожалуйста введите количество ходов:")
     val countGame: Int = readln().toInt()
+
     repeat(countGame) {
-        sumHuman += rool()
-        sumTerminator += rool()
+        sumHuman += roll()
+        sumTerminator += roll()
     }
+
     when {
         sumHuman > sumTerminator -> println("победил человек: $sumHuman")
         sumHuman < sumTerminator -> println("победил машина $sumTerminator")
@@ -18,7 +21,8 @@ fun main() {
     }
 }
 
-fun rool(): Int {
+fun roll(): Int {
     val count: Int = (1..DICE_SIDES).random()
+    println("выпавшее число: $count")
     return count
 }
