@@ -9,6 +9,7 @@ fun generationPass(length: Int): String {
     val specialsymbols = " !\"#\$%&'()*+,-./"
     val numSymbols = 0..9
     val pass = StringBuilder()
+
     repeat(length) {
         pass.append(numSymbols.random(), specialsymbols.random())
     }
