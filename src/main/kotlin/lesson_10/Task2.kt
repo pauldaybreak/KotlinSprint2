@@ -1,6 +1,7 @@
 package lesson_10
 
 
+
 const val MIN_LENGTH_DATA = 4
 
 fun main() {
@@ -8,47 +9,29 @@ fun main() {
 }
 
 fun registrationInSystem() {
-    var usrLogin: String
-    var usrPass: String
+    val userLogin: String
+    val userPassword: String
 
-    do {
+    while (true) {
         println("Логин для регистрации")
-        usrLogin = readln().trim()
+        userLogin = readln().trim()
         println("Пароль для регистрации")
-        usrPass = readln().trim()
+        userPassword = readln().trim()
 
-    } while (!validationPassword(usrLogin, usrPass))
+        val resultEntry = isValid(userLogin, userPassword)
 
-    val resultEntry = inputToSystem(usrLogin, usrPass)
+        when (resultEntry) {
+            true -> println("Вы зарегистрировались")
+            false -> println("Логин или пароль недостаточно длинные")
+        }
 
-    when (resultEntry) {
-        true -> println("Вход выполнен")
-        false -> println("Вход не выполнен")
+        return
     }
 }
 
-fun validationPassword(login: String, pass: String): Boolean {
-    val result: Boolean
+fun isValid(login: String, pass: String): Boolean {
+    val result: Boolean = login.length >= MIN_LENGTH_DATA && pass.length >= MIN_LENGTH_DATA
 
-    if (login.length >= MIN_LENGTH_DATA && pass.length >= MIN_LENGTH_DATA) {
-        result = true
-        println("Вы зарегистрировались")
-    } else {
-        println("Длина логина или пароля недостаточна")
-        result = false
-    }
     return result
 }
 
-fun inputToSystem(login: String, pass: String): Boolean {
-    println("Введите логин для входа")
-    val usrEntry = readln()
-    println("Введите пароль для входа")
-    val passEntry = readln()
-
-    return when {
-        login == usrEntry && pass == passEntry -> true
-        else -> false
-    }
-
-}
