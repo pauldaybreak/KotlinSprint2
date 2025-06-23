@@ -1,21 +1,19 @@
 package lesson_10
 
 fun main() {
-    val lengthPass: Int = readln().toInt() / 2
+    val lengthPass: Int = readln().toInt()
     println("пароль:\n${generatePassword(lengthPass)}")
 }
 
 fun generatePassword(length: Int): String {
-    val specialSymbols = " !\"#\$%&'()*+,-./"
-    val numSymbols = 0..9
+    val specialSymbols = 32..47
+    val numberSymbols = 0..9
     val password = StringBuilder()
 
-    for (i in 0 until length) {
-        if (i % 2 == 0) {
-            password.append(numSymbols.random())
-        } else {
-            password.append(specialSymbols.random())
-        }
-        return password.toString()
+    (0 until length).forEach { i ->
+        if (i % 2 == 0) password.append(numberSymbols.random())
+        else password.append(specialSymbols.random().toChar())
     }
+
+    return password.toString()
 }
