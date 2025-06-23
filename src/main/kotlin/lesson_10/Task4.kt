@@ -1,65 +1,69 @@
 package lesson_10
 
-import lesson_6.checkInputUserData
-
 const val DICE_SIDES = 6
+const val HUMAN = "человек"
+const val TERMINATOR = "машина"
+const val WIN_HUMAN_AND_TERMINATOR = "ничья"
+const val YES = "да"
+const val NO = "нет"
 
 fun main() {
-    var countFight: Int
-    do {
+    var countPartGame = 0
+    var countWinPartHuman = 0
+
+    while (true) {
         println("Желаете сыграть ещё:")
-        val usrChoise = readln().trim().lowercase()
-        when (usrChoise) {
-            "да" -> {
-                println("Сколько партий хотите сыграть")
-                countFight = readln().toInt()
-                repeat(countFight) {
-                    gameFight()
+        val userChoose = readln().trim().lowercase()
+        if (userChoose == YES) {
+            countPartGame++
+
+            when (playPart()) {
+                HUMAN -> {
+                    println("$countPartGame - партию выйграл человек")
+                    countWinPartHuman++
                 }
 
-                "нет" -> println("Выгрышные партии человека")
-
-
+                TERMINATOR -> {
+                    println("$countPartGame - партию выйграл машина")
+                }
             }
-
-
+        } else if (userChoose == NO) {
+            println("Число выйгранных партий человека: $countWinPartHuman")
+            break
         }
     }
 }
 
-
-fun gameFight(count: Int): Int{
-    var countWinPartHuman: Int = 0
+fun playPart(): String {
     var countWinPartTerminator: Int = 0
-    var countWinBoth: Int = 0
-    repeat(count) {
-        var scoreHuman = roll()
-        var scoreTerminator = roll()
-        when{
-            scoreHuman > scoreTerminator -> {
-                println("Победил человек")
-                countWinPartHuman++ }
-            scoreHuman < scoreTerminator -> {
-                println("Победил машина")
-                countWinPartTerminator }
-            scoreHuman == scoreTerminator -> println("Победил ничья")return "ничья"
+    var scoreHuman = roll()
+    var scoreTerminator = roll()
+
+    when {
+        scoreHuman > scoreTerminator -> {
+            println("Победил человек, $scoreHuman")
+            return HUMAN
         }
 
+        scoreHuman < scoreTerminator -> {
+            countWinPartTerminator++
+            println("Победил машина, $scoreTerminator")
+            return TERMINATOR
+        }
+
+        scoreHuman == scoreTerminator -> {
+            println("Победил ничья, человек = $scoreHuman, машина = $scoreTerminator")
+            return WIN_HUMAN_AND_TERMINATOR
+        }
 
     }
-
-
-
-
-    return when {
-        scoreHuman > scoreTerminator -> scoreHuman
-        scoreTerminator > scoreHuman -> scoreTerminator
-
-        else -> {scoreHuman}
-    }
+    return NO
 }
+
 
 fun roll(): Int {
     val count: Int = (1..DICE_SIDES).random()
     return count
 }
+
+
