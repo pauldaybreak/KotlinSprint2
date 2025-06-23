@@ -1,7 +1,5 @@
 package lesson_10
 
-
-
 const val MIN_LENGTH_DATA = 4
 
 fun main() {
