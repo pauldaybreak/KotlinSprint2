@@ -1,7 +1,7 @@
 package lesson_11
 
 import lesson_11.LigthSocialVoiceNetwork.Room
-import lesson_11.LigthSocialVoiceNetwork.Users
+import lesson_11.LigthSocialVoiceNetwork.User
 
 class LigthSocialVoiceNetwork(
 
@@ -10,10 +10,10 @@ class LigthSocialVoiceNetwork(
         var idRoom: Int,
         var coverRoom: String,
         var nameOfRoom: String,
-        var listUsersOfRoom: MutableList<Users>? = mutableListOf<Users>()
+        var listUsersOfRoom: MutableList<User>? = mutableListOf<User>()
     ) {
 
-        fun addUserToRoom(userToRoom: Users) {
+        fun addUserToRoom(userToRoom: User) {
             listUsersOfRoom?.add(userToRoom)
             println("${userToRoom.nameUser}: добавлен в комнату: ${nameOfRoom}")
         }
@@ -23,14 +23,14 @@ class LigthSocialVoiceNetwork(
         }
     }
 
-    class Users(
+    class User(
         var idUser: Int,
         var nameUser: String,
         var avatarUser: String,
         var statusUser: String = "пользователь заглушен",
     ) {
 
-        fun installStatusUser(user: Users) {
+        fun installStatusUser(user: User) {
 
             while (true) {
                 println("Выберите цифру что бы установить статус у пользователя: ${user.nameUser}")
@@ -50,7 +50,7 @@ class LigthSocialVoiceNetwork(
             }
         }
 
-        fun tapLongToAvatarUser(user: Users) {
+        fun tapLongToAvatarUser(user: User) {
             println("Симуляция долгого тапа по аватару. Нажми 5 раз Enter")
             var counter = 0
             while (true) {
@@ -63,22 +63,22 @@ class LigthSocialVoiceNetwork(
             }
         }
 
-        fun printInformationAboutUser(user: Users) {
+        fun printInformationAboutUser(user: User) {
             println("Инфо о пользователе: ${user.avatarUser}, ${user.idUser}, ${user.nameUser}, ${user.statusUser}")
         }
     }
 }
 
 fun main() {
-    var user1 = Users(1, "Paul", "avatar_paul.bmp")
+    var user1 = User(1, "Paul", "avatar_paul.bmp")
     user1.installStatusUser(user1)
     user1.tapLongToAvatarUser(user1)
 
-    var user2 = Users(2, "Андрей", "avatar_andrew.bmp")
+    var user2 = User(2, "Андрей", "avatar_andrew.bmp")
     user2.installStatusUser(user2)
     user2.tapLongToAvatarUser(user2)
 
-    var user3 = Users(3, "Филлип", "avatar_fillip.bmp")
+    var user3 = User(3, "Филлип", "avatar_fillip.bmp")
     user3.installStatusUser(user3)
     user3.tapLongToAvatarUser(user3)
 
