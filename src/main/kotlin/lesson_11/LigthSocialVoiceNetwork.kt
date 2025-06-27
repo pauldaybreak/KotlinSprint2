@@ -10,16 +10,16 @@ class LigthSocialVoiceNetwork(
         var idRoom: Int,
         var coverRoom: String,
         var nameOfRoom: String,
-        var listUsersOfRoom: MutableList<User>? = mutableListOf<User>()
+        var listUsersOfRoom: MutableList<User> = mutableListOf<User>()
     ) {
 
         fun addUserToRoom(userToRoom: User) {
-            listUsersOfRoom?.add(userToRoom)
+            listUsersOfRoom.add(userToRoom)
             println("${userToRoom.nameUser}: добавлен в комнату: ${nameOfRoom}")
         }
 
         fun printInfoRoom(id: Int) {
-            println("$id, $nameOfRoom, $coverRoom, ${listUsersOfRoom?.joinToString { it.nameUser }}")
+            println("$id, $nameOfRoom, $coverRoom, ${listUsersOfRoom.joinToString { it.nameUser }}")
         }
     }
 
