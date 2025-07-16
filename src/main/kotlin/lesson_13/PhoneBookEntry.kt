@@ -1,7 +1,7 @@
 package lesson_13
 
-class Task1(
-    var name: String,
+class PhoneBookEntry(
+    val name: String,
     var phoneNumber: Long,
     var company: String?
 ) {
@@ -12,7 +12,7 @@ class Task1(
 }
 
 fun main() {
-    val abonent1 = Task1(
+    val abonent1 = PhoneBookEntry(
         "Petr Ivanov",
         89291234567,
         null
