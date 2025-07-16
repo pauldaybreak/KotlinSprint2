@@ -6,7 +6,7 @@ class Task2(
     var isRainy: Boolean,
 ) {
     fun printInfo() {
-        println("dayTemp: $dayTemperature, nightTemp: $nightTemperature, isRainy: $isRainy")
+        println("Температура днем: $dayTemperature, Температура ночью: $nightTemperature, Осадки: $isRainy")
     }
 }
 
