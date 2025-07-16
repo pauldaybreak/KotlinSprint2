@@ -1,6 +1,6 @@
 package lesson_13
 
-class Task2(
+class PhoneBook(
     var name: String,
     var phoneNumber: Long,
     var company: String? = null ?: "<не указано>"
@@ -12,14 +12,14 @@ class Task2(
 }
 
 fun main() {
-    val abonent1 = Task2(
+    val abonent1 = PhoneBook(
         "Ростислав",
         89123456789,
         "Reddit"
     )
     abonent1.printInfo()
 
-    val abonent2 = Task2(
+    val abonent2 = PhoneBook(
         "Ростислав",
         89123456789,
     )
