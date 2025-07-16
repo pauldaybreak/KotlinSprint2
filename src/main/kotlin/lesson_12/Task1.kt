@@ -1,12 +1,12 @@
 package lesson_12
 
-class Task1(){
+class Task1() {
     var dayTemperature: Int = 0
     var nightTemperature: Int = 0
     var isRainy: Boolean = false
 
     fun printInfo() {
-        println("dayTemp: $dayTemperature, nightTemp: $nightTemperature, isRainy: $isRainy")
+        println("Температура днём: $dayTemperature, Температура ночью: $nightTemperature, Осадки: $isRainy")
     }
 }
 
