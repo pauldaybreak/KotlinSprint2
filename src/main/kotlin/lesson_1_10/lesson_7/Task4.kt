@@ -1,6 +1,4 @@
-package lesson_7
-
-import kotlin.concurrent.thread
+package lesson_1_10.lesson_7
 
 // Таймер с циклом for
 

@@ -1,4 +1,4 @@
-package lesson_6
+package lesson_1_10.lesson_6
 
 import kotlin.random.Random
 

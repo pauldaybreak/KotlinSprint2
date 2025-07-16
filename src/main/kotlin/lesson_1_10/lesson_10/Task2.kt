@@ -1,4 +1,4 @@
-package lesson_10
+package lesson_1_10.lesson_10
 
 const val MIN_LENGTH_DATA = 4
 

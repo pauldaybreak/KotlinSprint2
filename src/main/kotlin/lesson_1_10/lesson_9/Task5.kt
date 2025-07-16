@@ -1,4 +1,4 @@
-package lesson_9
+package lesson_1_10.lesson_9
 
 fun main() {
     print("Введите 5 неповторяющихся продуктов:")

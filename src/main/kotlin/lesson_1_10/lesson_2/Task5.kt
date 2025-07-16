@@ -1,7 +1,6 @@
-package lesson_2
+package lesson_1_10.lesson_2
 
 import kotlin.math.pow
-import kotlin.time.times
 
 fun main() {
 

@@ -1,4 +1,4 @@
-package lesson_3
+package lesson_1_10.lesson_3
 
 // Приветственный экран приложения.
 

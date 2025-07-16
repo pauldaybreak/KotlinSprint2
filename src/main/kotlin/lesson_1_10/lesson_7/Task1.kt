@@ -1,4 +1,4 @@
-package lesson_7
+package lesson_1_10.lesson_7
 
 // Генерация случайного пароля
 

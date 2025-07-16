@@ -1,4 +1,4 @@
-package lesson_9
+package lesson_1_10.lesson_9
 
 fun main() {
     val ingredientsOnePart = mutableMapOf(

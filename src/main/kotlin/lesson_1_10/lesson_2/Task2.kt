@@ -1,4 +1,4 @@
-package lesson_2
+package lesson_1_10.lesson_2
 
 fun main(){
     val quantityWorkers : Int = 50
