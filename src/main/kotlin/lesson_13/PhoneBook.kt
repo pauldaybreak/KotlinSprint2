@@ -1,13 +1,15 @@
 package lesson_13
 
 class PhoneBook(
-    var name: String,
-    var phoneNumber: Long,
-    var company: String? = null ?: "<не указано>"
+    val name: String,
+    val phoneNumber: Long,
+    var company: String? = null
 ) {
 
     fun printInfo() {
+        if(company == null) company = "<не указано>"
         println("- Имя: $name\n- Номер: $phoneNumber\n- Компания: $company")
+        println("---")
     }
 }
 
