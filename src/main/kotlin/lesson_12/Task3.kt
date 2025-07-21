@@ -7,12 +7,12 @@ class Task3(
     nightTemperatureKelvin: Int,
     isRainy: Boolean
 ) {
-    var dayTemperatureKelvin = dayTemperatureKelvin
-    var nightTemperatureKelvin = nightTemperatureKelvin
+    var dayTemperatureKelvin = dayTemperatureKelvin + KELVIN_TEMPERATURE
+    var nightTemperatureKelvin = nightTemperatureKelvin + KELVIN_TEMPERATURE
     var isRainy = isRainy
 
     fun printInfo() {
-        println("Температура в Цельсиях:\nДнем: ${dayTemperatureKelvin + KELVIN_TEMPERATURE},\nНочью: ${nightTemperatureKelvin + KELVIN_TEMPERATURE},\nОсадки: $isRainy")
+        println("Температура в Цельсиях:\nДнем: ${dayTemperatureKelvin},\nНочью: ${nightTemperatureKelvin},\nОсадки: $isRainy")
     }
 }
 
