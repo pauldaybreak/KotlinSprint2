@@ -2,7 +2,7 @@ package lesson_13
 
 class PhoneBookEntry(
     val name: String,
-    var phoneNumber: Long,
+    val phoneNumber: Long,
     var company: String?
 ) {
 
