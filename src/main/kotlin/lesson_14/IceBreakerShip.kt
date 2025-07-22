@@ -20,7 +20,7 @@ class IceBreakerShip(
     } else println("$name - Обслуживание реактора")
 
     fun workExpiditionGroup() {
-        println("Работает экспидиция $countDaysAutonomyWorking дней")
+        println("на корабле $name работает экспидиция $countDaysAutonomyWorking дней")
     }
 
 

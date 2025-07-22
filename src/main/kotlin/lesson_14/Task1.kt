@@ -4,7 +4,7 @@ fun main(){
     val cargoShip1 = CargoShip("Fortuna", 10, true, 10000)
     val cruiseShip1 = CruiseShip("Andatra", 25, true, 500, 35)
     val iceBreakerShip = IceBreakerShip("Ledokolun", 20, false, true, 100)
-    val iceBreakerShip2 = IceBreakerShip("ДизельСила", 20, false, false, 100)
+    val iceBreakerShip2 = IceBreakerShip("ДизельСила", 20, false, false, 50)
 
     cargoShip1.loadCargo()
     cargoShip1.startEngine()
