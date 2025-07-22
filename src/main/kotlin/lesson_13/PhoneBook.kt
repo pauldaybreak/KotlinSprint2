@@ -3,12 +3,11 @@ package lesson_13
 class PhoneBook(
     val name: String,
     val phoneNumber: Long,
-    var company: String? = null
+    val company: String? = null
 ) {
 
     fun printInfo() {
-        if(company == null) company = "<не указано>"
-        println("- Имя: $name\n- Номер: $phoneNumber\n- Компания: $company")
+        println("- Имя: $name\n- Номер: $phoneNumber\n- Компания: ${company ?: "<не указано>"}")
         println("---")
     }
 }
