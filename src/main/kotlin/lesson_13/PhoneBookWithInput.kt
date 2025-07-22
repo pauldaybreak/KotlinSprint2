@@ -1,9 +1,9 @@
 package lesson_13
 
 class PhoneBookWithInput(
-    var name: String,
-    var phoneNumber: Long?,
-    var company: String? = null
+    val name: String,
+    val phoneNumber: Long?,
+    val company: String? = null
 ) {
     fun printInfo() {
         println("- Имя: $name\n- Номер: $phoneNumber\n- Компания: $company")
