@@ -13,15 +13,13 @@ fun generateNumber(): Long {
 }
 
 fun main() {
-    val listWithContact = mutableListOf(
+    val listWithContact = listOf(
         PhoneBookCompany("Андрей", generateNumber(), "null"),
         PhoneBookCompany("Борис", generateNumber(), null),
         PhoneBookCompany("Владимир", generateNumber(), null),
         PhoneBookCompany("Генадий", generateNumber(), "Тинькофф"),
         PhoneBookCompany("Дмитрий", generateNumber(), "ЧелябМеталлИнвест"),
     )
-
-
     val listCompaniesOfPhoneBook = listWithContact.mapNotNull { it.company }.toSet()
     println("Список компаний: ${listCompaniesOfPhoneBook.joinToString(", ")}")
 }
