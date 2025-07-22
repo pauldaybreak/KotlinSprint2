@@ -2,8 +2,10 @@ package lesson_14
 
 open class Ship (
     val name: String,
-    val middleSpeed: Int,
-    val securityWeaponOnShip: Boolean = false
+    val speed: Int = 100,
+    val cargoLoad: Int = 100,
+    val countLoadPassengers: Int = 1,
+    val canBreakIce: Boolean = false,
 ){
     open fun startEngine(){
         println("$name Запуск двигателя")

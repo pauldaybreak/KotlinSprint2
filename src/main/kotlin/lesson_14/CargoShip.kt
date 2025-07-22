@@ -2,10 +2,13 @@ package lesson_14
 
 class CargoShip(
     name: String,
-    middleSpeed: Int,
-    securityWeaponOnShip: Boolean,
+    speed: Int,
+    cargoLoad: Int,
+    countLoadPassengers: Int,
+    canBreakIce: Boolean,
+    val securityWeaponOnShip: Boolean,
     val capacityDieselTank: Int,
-) : Ship(name, middleSpeed, securityWeaponOnShip) {
+) : Ship(name, speed, cargoLoad, countLoadPassengers, canBreakIce) {
     fun loadCargo() {
         println("$name Загрузка грузом")
     }

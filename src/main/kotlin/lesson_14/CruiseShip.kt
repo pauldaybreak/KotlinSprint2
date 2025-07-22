@@ -2,14 +2,15 @@ package lesson_14
 
 class CruiseShip (
     name: String,
-    middleSpeed: Int,
-    securityWeaponOnShip: Boolean,
-    val capacityPassenger: Int,
+    speed: Int,
+    cargoLoad: Int,
+    countLoadPassengers: Int,
+    canBreakIce: Boolean,
     val countServicePersonal: Int,
 
-    ): Ship(name, middleSpeed, securityWeaponOnShip){
+    ): Ship(name, speed, cargoLoad, countLoadPassengers, canBreakIce) {
     fun boardingPassengers(){
-        println("$name Посадка -  $capacityPassenger пассажиров")
+        println("$name Посадка -  $countLoadPassengers пассажиров")
     }
 
     fun exitPassengers(){
