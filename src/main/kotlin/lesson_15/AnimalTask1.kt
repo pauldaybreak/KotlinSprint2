@@ -1,62 +1,49 @@
 package lesson_15
 
-
-interface SwimmableAnimalTask1 {
-    fun swimming()
-    fun fastSwimmingBoost()
-    fun eats()
+interface Swimmable {
+    fun swim()
 }
 
-interface FlyableAnimal {
-    fun fly() {}
-    fun run() {}
-    fun say() {}
-    fun huntingFish() {}
+interface Flyable {
+    fun fly()
 }
 
 class Fish(
     val name: String,
-) : SwimmableAnimalTask1 {
-    override fun swimming() {
+) : Swimmable {
+    override fun swim() {
         println("$name, плывёт")
-    }
-
-    override fun fastSwimmingBoost() {
-        println("$name, плывёт с ускорением")
-    }
-
-    override fun eats() {
-        println("$name, ест")
     }
 }
 
 class Seagull(
     val name: String,
-) : FlyableAnimal {
+) : Flyable {
     override fun fly() {
         println("$name, летит")
     }
-
-    override fun huntingFish() {
-        println("$name, охотится")
-    }
 }
 
-class Goose(
+class Duck(
     val name: String,
-) : FlyableAnimal {
-    override fun run() {
-        println("$name, бежит")
+) : Flyable, Swimmable {
+    override fun fly() {
+        println("$name : летит")
+    }
+
+    override fun swim() {
+        println("$name : плывёт")
     }
 }
 
 fun main() {
     val crucianCarp = Fish("Карась")
-    val goose = Goose("Гусь")
+    val duck = Duck("Гусь")
     val seagull = Seagull("Чайка")
 
-    crucianCarp.swimming()
-    goose.run()
+    crucianCarp.swim()
+    duck.swim()
+    duck.fly()
     seagull.fly()
 
 }
