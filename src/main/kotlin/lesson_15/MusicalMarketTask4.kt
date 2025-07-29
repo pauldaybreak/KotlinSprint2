@@ -10,7 +10,7 @@ class MusicalInstrument(
     idGoods: Int,
     nameGoods: String,
     price: Double,
-    var listComponentForInstrument: MutableList<Pair<MusicalСomponent, Int>>?
+    val listComponentForInstrument: MutableList<Pair<MusicalСomponent, Int>>?
 ) : MusicalMarketTask4(
     idGoods, nameGoods,
     price,
