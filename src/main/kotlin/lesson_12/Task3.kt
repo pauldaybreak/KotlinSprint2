@@ -1,7 +1,5 @@
 package lesson_12
 
-const val KELVIN_TEMPERATURE = -273
-
 class Task3(
     dayTemperatureKelvin: Int,
     nightTemperatureKelvin: Int,
@@ -13,6 +11,9 @@ class Task3(
 
     fun printInfo() {
         println("Температура в Цельсиях:\nДнем: ${dayTemperatureKelvin},\nНочью: ${nightTemperatureKelvin},\nОсадки: $isRainy")
+    }
+    companion object{
+        const val KELVIN_TEMPERATURE = -273
     }
 }
 
