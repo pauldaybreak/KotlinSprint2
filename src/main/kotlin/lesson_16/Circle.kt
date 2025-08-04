@@ -1,5 +1,7 @@
 package lesson_16
 
+import kotlin.math.pow
+
 private const val PI: Double = 3.14
 
 class Circle(
@@ -7,13 +9,13 @@ class Circle(
 ) {
 
     fun lengthOfCircle(): Double {
-        val a = 2 * PI * radius
-        return a
+        return 2 * PI * radius
+
     }
 
     fun squareCircle(): Double {
-        val square = PI * (radius * radius)
-        return square
+        return PI * radius.toDouble().pow(2.0)
+
     }
 }
 
