@@ -8,7 +8,6 @@ class SideFolder(
     val name: String = _name
         get() = if (isSecret) "скрытая папка" else field
 
-
     val fileCount: Int = _fileCount
         get() = if (isSecret) 0 else field
 
@@ -16,7 +15,6 @@ class SideFolder(
         get() = field
         set(value: Boolean) {
             field = value
-
         }
 
     init {
