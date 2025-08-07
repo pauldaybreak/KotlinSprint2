@@ -1,39 +1,37 @@
 package lesson_17
 
 class SideFolder(
-    name: String,
-    quantityFolder: Int,
-    secretFlag: Boolean,
+    _name: String,
+    _fileCount: Int,
+    _isSecret: Boolean,
 ) {
-    var name: String = name
-        get() = field
+    val name: String = _name
+        get() = if (isSecret) "скрытая папка" else field
 
-    var quantityFolder: Int = quantityFolder
-        get() = field
 
-    var secretFlag: Boolean = secretFlag
+    val fileCount: Int = _fileCount
+        get() = if (isSecret) 0 else field
+
+    var isSecret: Boolean = _isSecret
         get() = field
         set(value: Boolean) {
             field = value
-            if (value) {
-                name = "скрытая папка"
-                quantityFolder = 0
-            }
+
         }
 
     init {
-        this.secretFlag = secretFlag
+        this.isSecret = _isSecret
     }
 
     fun printInfo() {
-        println("${name}, ${quantityFolder}")
+        println("${name}, ${this@SideFolder.fileCount}")
     }
 }
 
 fun main() {
     var folder1 = SideFolder("my private folder", 500, true)
     var folder2 = SideFolder("my  folder", 500, false)
-    folder2.secretFlag = true
+    folder2.isSecret = true
     folder1.printInfo()
     folder2.printInfo()
 }
