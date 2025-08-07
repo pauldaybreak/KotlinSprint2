@@ -4,23 +4,27 @@ class PlayerInGame(
     val name: String,
     private var health: Int,
     private var powerOfDamage: Int,
+    private var isAlive: Boolean = true,
 ) {
 
     private fun takeDamage(damage: Int) {
         health = health - damage
         println("$name получил урон $damage - здоровье $health")
-        if (health <= 0) {
+        if (health <= 0 && isAlive) {
             die()
         }
     }
 
     private fun die() {
-        powerOfDamage = 0
-        println("для игрока $name игра окончена, он мёртв")
+        if (health <= 0) {
+            isAlive = false
+            powerOfDamage = 0
+            println("для игрока $name игра окончена, он мёртв")
+        }
     }
 
     fun healing(scoreHealing: Int) {
-        if (this.health <= 0) {
+        if (!this.isAlive) {
             println("игрок ${this.name} не может излечится он мёртв")
         } else {
             this.health += scoreHealing
@@ -29,9 +33,10 @@ class PlayerInGame(
     }
 
     fun attack(attackedPlayer: PlayerInGame) {
-        if (attackedPlayer.health <= 0) {
-            attackedPlayer.powerOfDamage = 0
+        if (!attackedPlayer.isAlive) {
             println("${attackedPlayer.name} мёртв.")
+        } else if (!this.isAlive) {
+            println("${this.name} не может атаковать так как мёртв")
         } else {
             println("${this.name} - ${this.health} атакует: ${attackedPlayer.name} - ${attackedPlayer.health}")
             attackedPlayer.takeDamage(this.powerOfDamage)
@@ -49,7 +54,8 @@ fun main() {
     player2.healing(25)
     player1.attack(player2)
     player1.attack(player2)
+    player1.attack(player2)
+    player1.attack(player2)
+    player2.attack(player1)
     player2.healing(25)
-
-
 }
