@@ -3,10 +3,8 @@ package lesson_17
 class ShipSpaceGame(name: String, middleSpeed: Int, homePort: String) {
     var name: String = name
         get() = field
-        set(value: String) {
-            if (field != value) {
-                println("нельзя менять имя корабля")
-            }
+        set(value) {
+            println("нельзя менять имя корабля")
         }
     val middleSpeed: Int = middleSpeed
         get() = field
