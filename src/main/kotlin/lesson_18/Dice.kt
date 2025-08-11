@@ -8,43 +8,21 @@ open class Dice(
     }
 
     open fun printInfo() {
-        println(play())
+        println("На кубике с $countSide гранями выпало ${play()}")
     }
 }
 
 class Dice4() : Dice() {
     override val countSide: Int = 4
-
-    override fun printInfo() {
-        println("На кубике с $countSide гранями выпало ${play()}")
-    }
-    override fun play(): Int {
-        return (1..countSide).random()
-    }
 }
 
 class Dice6() : Dice() {
     override val countSide: Int = 6
-
-    override fun printInfo() {
-        println("На кубике с $countSide гранями выпало ${play()}")
-    }
-    override fun play(): Int {
-        return (1..countSide).random()
-
-    }
 }
 
 class Dice8() : Dice() {
     override val countSide: Int = 8
-
-    override fun printInfo() {
-        println("На кубике с $countSide гранями выпало ${play()}")
     }
-    override fun play(): Int {
-        return ((1..countSide).random())
-    }
-}
 
 fun main() {
     val dice1 = Dice4()
