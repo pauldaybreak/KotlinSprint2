@@ -9,10 +9,8 @@ class User(_login: String, _password: String) {
 
     var password = _password
         get() = "*".repeat(field.length)
-        set(value) {
-            if (field != value) {
-                println("Вы не можете изменить пароль")
-            }
+        set(_) {
+            println("Вы не можете изменить пароль")
         }
 
     fun printInfo() {
