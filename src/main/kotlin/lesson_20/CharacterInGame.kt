@@ -1,6 +1,6 @@
 package lesson_20
 
-class CharacterInGame (val name: String, var currentHalth: Int, val maximumHealth: Int = 100)
+class CharacterInGame(val name: String, var currentHalth: Int, val maximumHealth: Int = 100)
 
 fun main() {
     val medical: (CharacterInGame) -> Unit = { health ->
