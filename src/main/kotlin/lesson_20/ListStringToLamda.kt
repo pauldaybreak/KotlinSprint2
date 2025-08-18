@@ -11,6 +11,6 @@ fun main() {
         { println("Нажат элемент $it") }
     }
     listOfActions.forEachIndexed { index, function ->
-        if (index % 2 != 0) function()
+        if ((index + 1) % 2 == 0) function()
     }
 }
