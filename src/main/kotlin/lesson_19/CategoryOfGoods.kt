@@ -5,8 +5,8 @@ enum class CategoryOfGoods(private val description: String) {
     STATIONERY("канцелярские товары"),
     OTHER("разное");
 
-    fun printInfo() {
-        println(description)
+    fun showInfo(): String {
+        return description
     }
 }
 
@@ -14,7 +14,7 @@ class Goods(private val id: Int, val name: String, private val category: Categor
 
     fun printInfo() {
         println("артикул: $id, наименование: $name, категория товара: ")
-        category.printInfo()
+        println(category.showInfo())
     }
 }
 
