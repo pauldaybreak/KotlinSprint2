@@ -6,11 +6,11 @@ class SpaceShip(val name: String) {
     }
 
     fun land() {
-        TODO("здесь требуется описать логику приземления")
+        // TODO("здесь требуется описать логику приземления")
     }
 
     fun shootAsteroid() {
-        throw NotImplementedError("логика отстрела от астероидов")
+        TODO("логика стрельбы по астероидам.")
     }
 }
 
@@ -19,5 +19,4 @@ fun main() {
     ship1.takeOff()
     ship1.land()
     ship1.shootAsteroid()
-
 }
